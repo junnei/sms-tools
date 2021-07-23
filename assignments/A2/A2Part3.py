@@ -26,3 +26,10 @@ def DFT(x):
         X (numpy array) = The N point DFT of the input sequence x
     """
     ## Your code here
+    X = np.array([])
+    N = len(x)
+    n = np.arange(0,N)
+    for k in range(N):
+        e = np.exp(1j* 2 * np.pi * k * n / N)
+        X = np.append(X, sum(x * np.conj(e)))
+    return X
